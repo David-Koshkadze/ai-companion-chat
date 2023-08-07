@@ -29,14 +29,13 @@ export default function Sidebar() {
     },
   ];
 
-
   function onNavigate(url: string, protect: boolean) {
     return router.push(url)
   }
 
   return (
     <div className="space-y-4 flex flex-col h-full text-primary bg-secondary">
-      <div className="p-3 flex flex-1 justify-center">
+      <div className="p-2 flex flex-1 justify-center">
         <div className="space-y-2">
           {routes.map((route, idx) => (
             <div
@@ -45,7 +44,7 @@ export default function Sidebar() {
                 "text-muted-foreground text-sm group flex p-3 w-full justify-start cursor-pointer font-medium hover:text-primary hover:bg-primary/10 rounded-lg transition",
                 pathname === route.href ? "bg-primary/10 text-primary" : ""
               )}
-              onClick={() => onNavigate(route.href, route.protected)}
+              onClick={() => onNavigate(route.href, route.protect)}
             >
               <div className="flex flex-col gap-y-3 items-center flex-1">
                 <route.icon className="w-5 h-5"/>
